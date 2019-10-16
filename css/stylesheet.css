@@ -19,11 +19,11 @@ button {
     padding: 0px;
     font-size: 40px;
     border-radius: 100%;
-    box-shadow: 3px 4px #444;
+    box-shadow: 3px 3px #444;
 }
 
 button:active {
-    box-shadow: 2px 3px #333;
+    box-shadow: 2px 2px #333;
     transform: translateY(2px) translateX(1px);
 }
 
@@ -37,10 +37,10 @@ sup {
     width: 400px;
     padding: 20px;
     margin: 0 auto;
-    background-image: linear-gradient(to bottom right, #333, black 60%, #333);
-    border: 5px outset dimgrey;
-    border-radius: 8px;
-    box-shadow: 15px 15px 10px #666;
+    background-image: linear-gradient(354deg, #333, black 60%, #333);
+    border: 15px outset dimgrey;
+    border-radius: 12px;
+    box-shadow: 35px 35px 25px #666;
 }
 
 #display {
@@ -48,7 +48,7 @@ sup {
     height: 100px;
     margin: 0 auto 10px auto;
     padding: 0;
-    background-image: linear-gradient(357deg, black 75%, palegreen);
+    background-image: linear-gradient(354deg, black 58%, palegreen);
     border: 10px inset #333;
 }
 
@@ -59,9 +59,9 @@ sup {
     font-family: monospace;
     font-size: 64px;
     color: darkolivegreen;
-    text-shadow: 0 0 8px olivedrab;
+    text-shadow: 1px 0px 3px darkolivegreen, 0px 1px 3px darkolivegreen, -1px 0px 3px darkolivegreen, 0px -1px 3px darkolivegreen;
     text-align: right;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 #button-area {
