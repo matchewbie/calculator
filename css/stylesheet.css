@@ -1,0 +1,122 @@
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right, lightblue, dimgrey);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    height: 70px;
+    width: 70px;
+    margin: 0 auto;
+    padding: 0px;
+    font-size: 40px;
+    border-radius: 100%;
+    box-shadow: 3px 4px #444;
+}
+
+button:active {
+    box-shadow: 2px 3px #333;
+    transform: translateY(2px) translateX(1px);
+}
+
+sup {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+#container {
+    width: 400px;
+    padding: 20px;
+    margin: 0 auto;
+    background-image: linear-gradient(to bottom right, #333, black 60%, #333);
+    border: 5px outset dimgrey;
+    border-radius: 8px;
+    box-shadow: 15px 15px 10px #666;
+}
+
+#display {
+    grid-template-columns: repeat(100, 1fr);
+    height: 100px;
+    margin: 0 auto 10px auto;
+    padding: 0;
+    background-image: linear-gradient(357deg, black 75%, palegreen);
+    border: 10px inset #333;
+}
+
+#screen {
+    height: 100%;
+    margin: 0;
+    padding: 25px 15px 0 0;
+    font-family: monospace;
+    font-size: 64px;
+    color: darkolivegreen;
+    text-shadow: 0 0 8px olivedrab;
+    text-align: right;
+    opacity: 0.6;
+}
+
+#button-area {
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#numbers {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#zro,
+#one,
+#two,
+#tre,
+#fur,
+#fiv,
+#six,
+#svn,
+#eht,
+#nin,
+#dcml {
+    background: linear-gradient(to top right, #333, darkgrey 60%, black);
+    color: #222;
+    text-shadow: 0 0 8px white;
+}
+
+#dvd,
+#clr,
+#mtp,
+#exp,
+#mns,
+#fct,
+#pls,
+#mod,
+#eqls {
+    background: linear-gradient(to top right, black, dimgrey 60%, black);
+    color: ghostwhite;
+    text-shadow: 0 0 8px black;
+}
+
+#operators {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 0 0 auto;
+}
+
+#exp {
+    padding: 0 0 5px 7px;
+}
+
+.margin-top {
+    margin-top: 70px;
+}
