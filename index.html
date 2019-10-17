@@ -12,39 +12,39 @@
     </head>
 
     <body>
-        <div class="margin-top"> </div>
         <div id="container">
             <div id="display">
-                <div id="screen">
-                    512476583
-                </div>
+                <div id="screen"></div>
             </div>
 
             <div id="button-area">
-                <div id="numbers">
-                    <button id="svn" type="button">7</button>
-                    <button id="eht" type="button">8</button>
-                    <button id="nin" type="button">9</button>
-                    <button id="fur" type="button">4</button>
-                    <button id="fiv" type="button">5</button>
-                    <button id="six" type="button">6</button>
-                    <button id="one" type="button">1</button>
-                    <button id="two" type="button">2</button>
-                    <button id="tre" type="button">3</button>
-                    <button id="zro" type="button">0</button>
-                    <button id="dcml" type="button">&#183;</button>
-                    <button id="eqls" type="button">&#61;</button>
-                </div>
-                <div id="operators">
-                    <button id="dvd" type="button">&#247;</button>
-                    <button id="clr" type="button">C</button>
-                    <button id="mtp" type="button">&#215;</button>
-                    <button id="exp" type="button">&#1091;<sup>&#10007;</sup></button>
-                    <button id="mns" type="button">&#8722;</button>
-                    <button id="fct" type="button">&#10007;!</button>
-                    <button id="pls" type="button">&#43;</button>
-                    <button id="mod" type="button">&#37;</button>
-                </div>
+                <button id="svn" class="number" type="button">7</button>
+                <button id="eht" class="number" type="button">8</button>
+                <button id="nin" class="number" type="button">9</button>
+
+                <button id="dvd" class="operator" type="button">&#247;</button>
+                <button id="clr" type="button" onclick="clearAll();">C</button>
+
+                <button id="fur" class="number" type="button">4</button>
+                <button id="fiv" class="number" type="button">5</button>
+                <button id="six" class="number" type="button">6</button>
+
+                <button id="mtp" class="operator" type="button">&#215;</button>
+                <button id="exp" class="operator" type="button">y<sup>&#215;</sup></button>
+
+                <button id="one" class="number" type="button">1</button>
+                <button id="two" class="number" type="button">2</button>
+                <button id="tre" class="number" type="button">3</button>
+
+                <button id="mns" class="operator" type="button">&#8722;</button>
+                <button id="fct" class="operator" type="button">&#215;!</button>
+
+                <button id="zro" class="number" type="button">0</button>
+                <button id="dcml" type="button" onclick="decimalClick();">.</button>
+
+                <button id="eqls" type="button" onclick="total();">&#61;</button>
+                <button id="pls" class="operator" type="button">&#43;</button>
+                <button id="bsp" type="button" onclick="backspace();">&#8592;</button>
             </div>
         </div>
 
