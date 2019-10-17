@@ -14,7 +14,10 @@ const calculate = {
     total : null,
     num2 : null,
     operator : null,
+    decimal : false
 }
+
+let newScreen = true;
 
 
 
@@ -28,7 +31,7 @@ function add(num1, num2) {
 function backspace() {
 
     var back = [...screen.textContent.split('')];
-    
+
     back.splice(-1, 1);
     back = back.join('');
 
@@ -42,6 +45,9 @@ function clearAll() {
     calculate.operator = null;
     calculate.total = null;
     calculate.num2 = null;
+    calculate.decimal = false;
+
+    newScreen = true;
 
     screen.textContent = '';
 
@@ -59,9 +65,15 @@ function clearAll() {
 
 function decimalClick() {
 
-    if (!(screen.textContent.includes('.'))) {
+    if (!(`${screen.textContent}`.includes('.'))) calculate.decimal = false;
+
+    if (calculate.decimal === false || newScreen) {
+
+        if (newScreen) screen.textContent = '';
 
         screen.textContent += decimalButton.textContent;
+        calculate.decimal = true;
+        newScreen = false;
     }
 }
 
@@ -69,7 +81,13 @@ function decimalClick() {
 
 function divide(num1, num2) {
 
-    return num1 / num2;
+    if (num2 === 0) {
+
+        return screen.textContent = `${error()}`;
+    }
+    else {
+        return num1 / num2;
+    }
 }
 
 
@@ -90,9 +108,11 @@ function error() {
 
 
 
-function factorial(num) {
+function findPrecision(num) {
 
-	return num ? num * factorial(num - 1) : 1;
+    num = `${num}`.split('.');
+
+    return 9 - (num[0].length + 1);
 }
 
 
@@ -106,34 +126,37 @@ function multiply(num1, num2) {
 
 function numButtonClick() {
 
-    if (calculate.total !== null && calculate.num2 === null) {
+    if (newScreen) {
 
         screen.textContent = '';
-        calculate.num2 = Number(this.textContent);
+
+        newScreen = false;
     }
 
     screen.textContent = (screen.textContent.length + 1) <= 9 ? screen.textContent += this.textContent : `${error()}`;
-
-    if (calculate.operator === 'fct') screen.textContent = `${error()}`;
 }
 
 
 
 function opButtonClick() {
 
-    if (this.id === 'fct') screen.textContent += '!';
+    if (calculate.total !== null && calculate.num2 === null && newScreen === false) calculate.num2 = Number(screen.textContent);
 
-    if (calculate.total !== null && calculate.num2 === null) calculate.num2 = Number(screen.textContent);
-
+    if (screen.textContent !== '' && calculate.total === null) calculate.total = Number(screen.textContent);
+    console.log(calculate);
+    if (calculate.num2 !== null) total();
+    
     if (calculate.total === null) {
-
-        calculate.total = Number(screen.textContent);
+        calculate.operator = null;
     }
     else {
-        total();
+        calculate.operator = this.id;
     }
 
-    calculate.operator = this.id;
+    if (calculate.operator === 'sqrt') total();
+
+    calculate.decimal = false;
+    newScreen = true;
 }
 
 
@@ -145,32 +168,52 @@ function operate(num1, num2, operator) {
          : operator === 'mtp' ? multiply(num1, num2)
          : operator === 'dvd' ? divide(num1, num2)
          : operator === 'exp' ? power(num1, num2)
-         : factorial(num1);
+         : squareRoot(num1);
 }
 
 
 
 function power(num1, num2) {
+
 	return Math.pow(num1, num2);
 }
 
 
 
+function round(num, precision) {
+
+    return Number(Math.round(num + 'e' + precision) + 'e-' + precision);
+}
+
+
+
 function subtract(num1, num2) {
+
 	return num1 - num2;
+}
+
+
+
+function squareRoot(num) {
+
+    return Math.sqrt(num);
 }
 
 
 
 function total() {
 
-    calculate.num2 = Number(screen.textContent);
+    if (calculate.total !== null && calculate.operator !== null) {
 
-    calculate.total = operate(calculate.total, calculate.num2, calculate.operator);
+        calculate.num2 = Number(screen.textContent);
 
-    calculate.num2 = null;
-    
-    screen.textContent = `${calculate.total}`;
+        calculate.total = operate(calculate.total, calculate.num2, calculate.operator);
 
-    if (screen.textContent.length > 9) screen.textContent = `${error()}`;
+        calculate.num2 = null;
+        calculate.operator = null;
+        
+        screen.textContent = `${round(calculate.total, findPrecision(calculate.total))}`;
+    }
+
+    if (screen.textContent === 'Infinity' || screen.textContent === 'NaN') screen.textContent = `${error()}`;
 }
