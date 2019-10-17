@@ -13,7 +13,7 @@ Buttons
 - Backspace (digit-by-digit on screen)
 
 Rounding
-- ([Jack Moore's](http://www.jacklmoore.com/notes/rounding-in-javascript/) rounding solution utilizing exponential notation)
+- [Jack Moore's](http://www.jacklmoore.com/notes/rounding-in-javascript/) Rounding Solution (utilizing exponential notation)
 
 - Decimal Precision (based on availability of digits on screen)
 ```
