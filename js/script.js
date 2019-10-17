@@ -51,7 +51,7 @@ function clearAll() {
 
     screen.textContent = '';
 
-    if (buttons[0].disabled === true) buttons.forEach(button => {
+    if (buttons[1].disabled === true) buttons.forEach(button => {
 
         if (button.id !== 'clr') {
 
