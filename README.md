@@ -1,5 +1,5 @@
-##Calculator
-####Operations included:
+## Calculator
+#### Operations included:
 - Add
 - Subtract
 - Multiply
@@ -7,7 +7,7 @@
 - Square Root
 - Exponentiation
 
-####Applied functionality:
+#### Applied functionality:
 Buttons
 - Clear (reset memory and empty screen)
 - Backspace (digit-by-digit on screen)
