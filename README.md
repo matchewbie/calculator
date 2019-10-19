@@ -1,11 +1,20 @@
 # Calculator
+- Keyboard support is here!
+
 ## Operations included:
+
 - Add
 - Subtract
-- Multiply
-- Divide
-- Square Root
-- Exponentiation
+- Multiply          ( key : * )
+- Divide            ( key : / )
+- Square Root       ( key : s )
+- Exponentiation    ( key : y )
+- Decimal
+- Equals
+
+- Clear             ( key : c )
+- Backspace
+
 
 ## Additional functionality:
 Buttons
