@@ -131,17 +131,6 @@ function findPrecision(num) {
 
 
 
-function toggleButton(key, e) {
-
-    var button = document.getElementById(key);
-
-    button.classList.toggle('key-press');
-
-    if (e.type === 'keyup') button.click();
-}
-
-
-
 function getKeyboardInput(e) {
 
     if (e.key >= 0 && e.key < 10) {
@@ -284,6 +273,22 @@ function subtract(num1, num2) {
 function squareRoot(num) {
 
     return Math.sqrt(num);
+}
+
+
+
+function toggleButton(key, e) {
+
+    var button = document.getElementById(key);
+
+    if (e.type === 'keydown') {
+        
+        button.classList.add('key-press');
+    else {
+        button.classList.remove('key-press');
+    }
+
+    if (e.type === 'keyup') button.click();
 }
 
 
