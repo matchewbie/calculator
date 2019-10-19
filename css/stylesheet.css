@@ -1,6 +1,4 @@
-html {
-    height: 100%;
-}
+html {height: 100%;}
 
 body {
     width: 100%;
@@ -10,6 +8,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 button {
@@ -44,7 +43,7 @@ sup {
 #calculator {
     width: 350px;
     padding: 20px;
-    margin: 40px auto 0 auto;
+    margin: 10px auto 0 auto;
     background-image: linear-gradient(354deg, #333, black 60%, #333);
     border: 15px outset #444;
     border-radius: 12px;
@@ -78,9 +77,7 @@ sup {
     grid-template-columns: repeat(4, 1fr);
 }
 
-#exp {
-    padding: 0 0 5px 7px;
-}
+#exp {padding: 0 0 5px 7px;}
 
 .number,
 #dcml {
@@ -98,12 +95,56 @@ sup {
     text-shadow: 0 0 8px black;
 }
 
-.disabled {
-    opacity: 0.5;
-}
+.disabled {opacity: 0.5;}
 
 .key-press {
     box-shadow: 2px 2px #333;
     transform: translateY(2px) translateX(1px);
     opacity: 0.5;
+}
+
+.dropbtn {
+background-color: rgba(255, 255, 255, 0.1);
+color: dimgrey;
+padding: 10px 16px;
+font-size: 0.7em;
+border: none;
+border-radius: 0px;
+cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+background-color: rgba(0, 0, 0, 0.8);
+color: whitesmoke;
+}
+
+.dropdown {
+position: relative;
+display: block;
+}
+
+.dropdown-content {
+display: none;
+width: 270px;
+position: absolute;
+background-color: rgba(0, 0, 0, 0.8);
+border-bottom-right-radius: 12px;
+z-index: 1;
+}
+
+.dropdown-content pre {
+font-family: monospace;
+font-size: 1em;
+margin: auto;
+width: 270px;
+color: whitesmoke;
+padding: 12px 16px;
+text-align: left;
+}
+
+.dropdown:hover .dropdown-content {display:block;}
+
+.dropdown:hover .dropbtn {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: whitesmoke;
 }
