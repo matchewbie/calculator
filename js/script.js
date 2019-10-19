@@ -219,7 +219,7 @@ function opButtonClick() {
     if (calculate.total !== null && calculate.num2 === null && newScreen === false) calculate.num2 = Number(screen.textContent);
 
     if (screen.textContent !== '' && calculate.total === null) calculate.total = Number(screen.textContent);
-    console.log(calculate);
+
     if (calculate.num2 !== null) total();
     
     if (calculate.total === null) {
@@ -286,10 +286,9 @@ function toggleButton(key, e) {
         button.classList.add('key-press');
     }
     else {
+        button.click();
         button.classList.remove('key-press');
     }
-
-    if (e.type === 'keyup') button.click();
 }
 
 
