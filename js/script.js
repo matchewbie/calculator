@@ -284,6 +284,7 @@ function toggleButton(key, e) {
     if (e.type === 'keydown') {
         
         button.classList.add('key-press');
+    }
     else {
         button.classList.remove('key-press');
     }
