@@ -43,7 +43,7 @@ sup {
 #calculator {
     width: 350px;
     padding: 20px;
-    margin: 10px auto 0 auto;
+    margin: 20px auto 0 auto;
     background-image: linear-gradient(354deg, #333, black 60%, #333);
     border: 15px outset #444;
     border-radius: 12px;
@@ -108,14 +108,18 @@ background-color: rgba(255, 255, 255, 0.1);
 color: dimgrey;
 padding: 10px 16px;
 font-size: 0.7em;
-border: none;
+border-bottom: 4px solid rgba(0, 0, 0, 0.1);
 border-radius: 0px;
 cursor: pointer;
 }
 
 .dropbtn:hover, .dropbtn:focus {
+margin: 0;
+padding: 10px 0 0 0;
+height: 28.3667px;
 background-color: rgba(0, 0, 0, 0.8);
 color: whitesmoke;
+border: none;
 }
 
 .dropdown {
@@ -128,6 +132,8 @@ display: none;
 width: 270px;
 position: absolute;
 background-color: rgba(0, 0, 0, 0.8);
+border-right: 8px solid rgba(0, 0, 0, 0.1);
+border-bottom: 8px solid rgba(0, 0, 0, 0.1);
 border-bottom-right-radius: 12px;
 z-index: 1;
 }
@@ -138,13 +144,16 @@ font-size: 1em;
 margin: auto;
 width: 270px;
 color: whitesmoke;
-padding: 12px 16px;
+padding: 8px 12px;
 text-align: left;
 }
 
 .dropdown:hover .dropdown-content {display:block;}
 
 .dropdown:hover .dropbtn {
+    padding: 10px 0 0 0;
+    height: 28.3667px;
     background-color: rgba(0, 0, 0, 0.8);
     color: whitesmoke;
+    border: none;
 }
