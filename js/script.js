@@ -10,6 +10,15 @@ numButtons.forEach(button => button.addEventListener('click', numButtonClick));
 const opButtons = document.querySelectorAll('.operator');
 opButtons.forEach(button => button.addEventListener('click', opButtonClick));
 
+const calculate = {
+    total : null,
+    num2 : null,
+    operator : null,
+    decimal : false
+}
+
+
+
 window.addEventListener('keydown', event => {
     
     getKeyboardInput(event);
@@ -17,17 +26,9 @@ window.addEventListener('keydown', event => {
     if (event.key === '/') event.preventDefault();
 });
 
-window.addEventListener('keyup', event => {
+window.addEventListener('keyup', event => getKeyboardInput(event));
 
-    getKeyboardInput(event);
-});
 
-const calculate = {
-    total : null,
-    num2 : null,
-    operator : null,
-    decimal : false
-}
 
 let newScreen = true;
 let keyPress = false;
@@ -137,10 +138,7 @@ function getKeyboardInput(e) {
 
         numButtons.forEach(button => {
 
-            if (button.innerText === e.key) {
-
-                toggleButton(button.id, e);
-            }
+            if (button.innerText === e.key) toggleButton(button.id, e);
         });
     }
     else {
