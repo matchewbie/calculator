@@ -10,6 +10,18 @@ numButtons.forEach(button => button.addEventListener('click', numButtonClick));
 const opButtons = document.querySelectorAll('.operator');
 opButtons.forEach(button => button.addEventListener('click', opButtonClick));
 
+window.addEventListener('keydown', event => {
+    
+    getKeyboardInput(event);
+
+    if (event.key === '/') event.preventDefault();
+});
+
+window.addEventListener('keyup', event => {
+
+    getKeyboardInput(event);
+});
+
 const calculate = {
     total : null,
     num2 : null,
@@ -18,6 +30,7 @@ const calculate = {
 }
 
 let newScreen = true;
+let keyPress = false;
 
 
 
@@ -71,7 +84,8 @@ function decimalClick() {
 
         if (newScreen) screen.textContent = '';
 
-        screen.textContent += decimalButton.textContent;
+        screen.textContent = (screen.textContent.length + 1) <= 9 ? screen.textContent += decimalButton.textContent : `${error()}`;
+        
         calculate.decimal = true;
         newScreen = false;
     }
@@ -113,6 +127,79 @@ function findPrecision(num) {
     num = `${num}`.split('.');
 
     return 9 - (num[0].length + 1);
+}
+
+
+
+function toggleButton(key, e) {
+
+    var button = document.getElementById(key);
+
+    button.classList.toggle('key-press');
+
+    if (e.type === 'keyup') button.click();
+}
+
+
+
+function getKeyboardInput(e) {
+
+    if (e.key >= 0 && e.key < 10) {
+
+        numButtons.forEach(button => {
+
+            if (button.innerText === e.key) {
+
+                toggleButton(button.id, e);
+            }
+        });
+    }
+    else {
+        switch (e.key) {
+
+            case '+':
+                toggleButton('pls', e);
+                break;
+
+            case '-':
+                toggleButton('mns', e);
+                break;
+
+            case '=':
+                toggleButton('eqls', e);
+                break;
+
+            case '/':
+                toggleButton('dvd', e);
+                break;
+            
+            case '*':
+                toggleButton('mtp', e);
+                break;
+
+            case '.':
+                toggleButton('dcml', e);
+                break;
+
+            case 'c':
+            case 'C':
+                toggleButton('clr', e);
+                break;
+
+            case 'Backspace':
+                toggleButton('bsp', e);
+                break;
+
+            case 'y':
+            case '^':
+                toggleButton('exp', e);
+                break;
+
+            case 's':
+            case '√':
+                toggleButton('sqrt', e);
+        }
+    }
 }
 
 
