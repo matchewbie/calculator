@@ -132,15 +132,6 @@ function findPrecision(num) {
 
 
 
-function isNumpad(e) {
-    var numpad = e.key.split(' ');
-    numpad.splice(0, 1);
-
-    return numpad.join('');
-}
-
-
-
 function getKeyboardInput(e) {
 
     e.key = (e.key.indexOf('numpad') !== -1) ? isNumpad(e) : e.key;
@@ -205,6 +196,15 @@ function getKeyboardInput(e) {
                 toggleButton('sqrt', e);
         }
     }
+}
+
+
+
+function isNumpad(e) {
+    var numpad = e.key.split(' ');
+    numpad.splice(0, 1);
+
+    return numpad.join('');
 }
 
 
