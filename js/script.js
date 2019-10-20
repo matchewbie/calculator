@@ -132,7 +132,18 @@ function findPrecision(num) {
 
 
 
+function isNumpad(e) {
+    var numpad = e.key.split(' ');
+    numpad.splice(0, 1);
+
+    return numpad.join('');
+}
+
+
+
 function getKeyboardInput(e) {
+
+    e.key = (e.key.indexOf('numpad') !== -1) ? isNumpad(e) : e.key;
 
     if (e.key >= 0 && e.key < 10) {
 
@@ -145,26 +156,33 @@ function getKeyboardInput(e) {
         switch (e.key) {
 
             case '+':
+            case 'add':
                 toggleButton('pls', e);
                 break;
 
             case '-':
+            case 'subtract':
                 toggleButton('mns', e);
                 break;
 
             case '=':
+            case 'equal sign':
                 toggleButton('eqls', e);
                 break;
 
             case '/':
+            case 'divide':
                 toggleButton('dvd', e);
                 break;
             
             case '*':
+            case 'multiply':
                 toggleButton('mtp', e);
                 break;
 
             case '.':
+            case 'decimal point':
+            case 'period':
                 toggleButton('dcml', e);
                 break;
 
