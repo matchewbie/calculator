@@ -104,49 +104,76 @@ sup {
 }
 
 .dropbtn {
-background-color: rgba(255, 255, 255, 0.1);
-color: dimgrey;
-padding: 10px 16px;
-font-size: 0.7em;
-border-bottom: 4px solid rgba(0, 0, 0, 0.1);
-border-radius: 0px;
-cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: dimgrey;
+    padding: 10px 16px;
+    font-size: 0.7em;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+}
+
+.calc-title {
+    float: left;
+    width: 120px;
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+}
+
+.via-keyboard {
+    margin: 0 auto;
+    padding: 0;
+    width: 150px;
+    text-decoration: underline;
+}
+
+.matchewbie {
+    float: right;
+    position: relative;
+    width: 70px;
+    margin: 0;
+    padding: 0;
+    color: dimgrey;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: lighter;
+    opacity: 0.5;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-margin: 0;
-padding: 10px 0 0 0;
-height: 28.3667px;
-background-color: rgba(0, 0, 0, 0.8);
-color: whitesmoke;
-border: none;
+    margin: 0;
+    padding: 10px 0 0 0;
+    height: 28.3667px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: whitesmoke;
+    border: none;
 }
 
 .dropdown {
-position: relative;
-display: block;
+    position: relative;
+    display: block;
+    cursor: help;
 }
 
 .dropdown-content {
-display: none;
-width: 270px;
-position: absolute;
-background-color: rgba(0, 0, 0, 0.8);
-border-right: 8px solid rgba(0, 0, 0, 0.1);
-border-bottom: 8px solid rgba(0, 0, 0, 0.1);
-border-bottom-right-radius: 12px;
-cursor: pointer;
-z-index: 1;
+    display: none;
+    width: 270px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-right: 8px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 8px solid rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: 12px;
+    z-index: 1;
 }
 
 .dropdown-content pre {
-font-family: monospace;
-font-size: 1em;
-margin: auto;
-width: 270px;
-color: whitesmoke;
-padding: 8px 12px;
-text-align: left;
+    font-family: monospace;
+    font-size: 1em;
+    margin: auto;
+    width: 270px;
+    color: silver;
+    padding: 8px 12px;
+    text-align: left;
 }
 
 .dropdown:hover .dropdown-content {display:block;}
@@ -155,6 +182,17 @@ text-align: left;
     padding: 10px 0 0 0;
     height: 28.3667px;
     background-color: rgba(0, 0, 0, 0.8);
-    color: whitesmoke;
+    color: silver;
     border: none;
+}
+
+.dropdown:hover .calc-title {
+    padding: 0 0 0 16px;
+    color: dimgrey;
+}
+
+.dropdown:hover .via-keyboard {text-decoration: none;;}
+
+.dropdown:hover .matchewbie {
+    padding: 0 16px 0 0;
 }
