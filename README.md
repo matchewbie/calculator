@@ -1,21 +1,6 @@
 # Calculator
 - Keyboard support is here!
 
-## Operations included:
-
-- Add
-- Subtract
-- Multiply          ( key  * )
-- Divide            ( key  / )
-- Square Root       ( key  s )
-- Exponentiation    ( key  y )
-- Decimal
-- Equals
-
-- Clear             ( key  c )
-- Backspace
-
-
 ## Additional functionality:
 Buttons
 - Clear (reset memory and empty screen)
