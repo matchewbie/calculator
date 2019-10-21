@@ -147,32 +147,42 @@ function getKeyboardInput(e) {
         switch (e.key) {
 
             case '+':
+            case 'Add':
             case 'add':
                 toggleButton('pls', e);
                 break;
 
             case '-':
+            case 'Subtract':
             case 'subtract':
                 toggleButton('mns', e);
                 break;
 
             case '=':
+            case 'Equals':
+            case 'equals':
+            case 'Equal Sign':
             case 'equal sign':
             case 'Enter':
                 toggleButton('eqls', e);
                 break;
 
             case '/':
+            case 'Divide':
             case 'divide':
                 toggleButton('dvd', e);
                 break;
             
             case '*':
+            case 'Multiply':
             case 'multiply':
                 toggleButton('mtp', e);
                 break;
 
             case '.':
+            case 'Decimal':
+            case 'decimal':
+            case 'Decimal Point':
             case 'decimal point':
             case 'period':
                 toggleButton('dcml', e);
