@@ -158,6 +158,7 @@ function getKeyboardInput(e) {
 
             case '=':
             case 'equal sign':
+            case 'Enter':
                 toggleButton('eqls', e);
                 break;
 
