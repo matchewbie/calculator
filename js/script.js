@@ -60,6 +60,7 @@ function backspace() {
 
 
 function clearAll() {
+    console.log('** Clear Screen **');
 
     calculate.operator = null;
     calculate.total = null;
