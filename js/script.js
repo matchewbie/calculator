@@ -19,7 +19,7 @@ const calculate = {
 
 
 
-window.addEventListener('keydown', event => {
+document.addEventListener('keydown', event => {
     console.log(event.key);
     
     getKeyboardInput(event);
@@ -27,7 +27,7 @@ window.addEventListener('keydown', event => {
     if (event.key === '/') event.preventDefault();
 });
 
-window.addEventListener('keyup', event => {
+document.addEventListener('keyup', event => {
     console.log(event.key);
 
     getKeyboardInput(event);
