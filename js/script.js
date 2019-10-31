@@ -19,19 +19,14 @@ const calculate = {
 
 
 
-document.addEventListener('keydown', event => {
-    console.log(event.key);
-    
-    getKeyboardInput(event);
+document.addEventListener('keydown', e => {
 
-    if (event.key === '/') event.preventDefault();
+    getKeyboardInput(e);
+
+    if ( ['Enter', 'Return', '/', 'c'].includes(e.key) ) e.preventDefault();
 });
 
-document.addEventListener('keyup', event => {
-    console.log(event.key);
-
-    getKeyboardInput(event);
-});
+document.addEventListener('keyup', e => getKeyboardInput(e));
 
 
 
@@ -171,6 +166,7 @@ function getKeyboardInput(e) {
             case 'enter':
             case 'Return':
             case 'return':
+                console.log(`${e.type} event.key: ${e.key}`);
                 toggleButton('eqls', e);
                 break;
 
@@ -313,6 +309,7 @@ function toggleButton(key, e) {
     else {
         button.click();
         button.classList.remove('key-press');
+        console.log(`screen.textContent: ${screen.textContent}`);
     }
 }
 
