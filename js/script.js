@@ -139,8 +139,6 @@ function findPrecision(num) {
 
 function getKeyboardInput(e) {
 
-    e.key = (e.key.indexOf('numpad') !== -1) ? isNumpad(e) : e.key;
-
     if (e.key >= 0 && e.key < 10) {
 
         numButtons.forEach(button => {
@@ -164,8 +162,8 @@ function getKeyboardInput(e) {
                 break;
 
             case '=':
-            case 'Equals':
-            case 'equals':
+            case 'Equal':
+            case 'equal':
             case 'Equal Sign':
             case 'equal sign':
             case 'Enter':
@@ -195,7 +193,7 @@ function getKeyboardInput(e) {
                 break;
 
             case 'c':
-            case 'C':
+            case 'Clear':
                 toggleButton('clr', e);
                 break;
 
@@ -213,15 +211,6 @@ function getKeyboardInput(e) {
                 toggleButton('sqrt', e);
         }
     }
-}
-
-
-
-function isNumpad(e) {
-    var numpad = e.key.split(' ');
-    numpad.splice(0, 1);
-
-    return numpad.join('');
 }
 
 
