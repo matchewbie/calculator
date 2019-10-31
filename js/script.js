@@ -20,13 +20,18 @@ const calculate = {
 
 
 window.addEventListener('keydown', event => {
+    console.log(event.key)
     
     getKeyboardInput(event);
 
     if (event.key === '/') event.preventDefault();
 });
 
-window.addEventListener('keyup', event => getKeyboardInput(event));
+window.addEventListener('keyup', event => {
+    console.log(event.key)
+
+    getKeyboardInput(event);
+});
 
 
 
