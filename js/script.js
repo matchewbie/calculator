@@ -20,7 +20,7 @@ const calculate = {
 
 
 window.addEventListener('keydown', event => {
-    console.log(event.key)
+    console.log(event.key);
     
     getKeyboardInput(event);
 
@@ -28,7 +28,7 @@ window.addEventListener('keydown', event => {
 });
 
 window.addEventListener('keyup', event => {
-    console.log(event.key)
+    console.log(event.key);
 
     getKeyboardInput(event);
 });
