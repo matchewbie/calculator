@@ -55,7 +55,6 @@ function backspace() {
 
 
 function clearAll() {
-    console.log('** Clear Screen **');
 
     calculate.operator = null;
     calculate.total = null;
@@ -166,7 +165,6 @@ function getKeyboardInput(e) {
             case 'enter':
             case 'Return':
             case 'return':
-                console.log(`${e.type} event.key: ${e.key}`);
                 toggleButton('eqls', e);
                 break;
 
@@ -309,7 +307,6 @@ function toggleButton(key, e) {
     else {
         button.click();
         button.classList.remove('key-press');
-        console.log(`screen.textContent: ${screen.textContent}`);
     }
 }
 
